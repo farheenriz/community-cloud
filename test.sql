@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2021 at 01:10 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.1
+-- Generation Time: Mar 29, 2021 at 07:30 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -175,16 +174,23 @@ CREATE TABLE `upload` (
   `ID` int(11) NOT NULL,
   `Path` varchar(255) NOT NULL,
   `Name` varchar(50) NOT NULL,
-  `Keywords` varchar(200) NOT NULL
+  `Keywords` varchar(200) NOT NULL,
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `upload`
 --
 
-INSERT INTO `upload` (`ID`, `Path`, `Name`, `Keywords`) VALUES
-(1, 'http://localhost/cc/documents/Android Google Map Displaying Current Location.docx', 'Android Location API', 'android, location'),
-(2, 'http://localhost/cc/documents/Steps To Create Devise Current Location In Android1.docx', 'steps', 'steps');
+INSERT INTO `upload` (`ID`, `Path`, `Name`, `Keywords`, `user_id`) VALUES
+(1, 'http://localhost/cc/documents/Android Google Map Displaying Current Location.docx', 'Android Location API', 'android, location', 0),
+(2, 'http://localhost/cc/documents/Steps To Create Devise Current Location In Android1.docx', 'steps', 'steps', 0),
+(3, 'http://saas.epizy.com/documents/Synopsis Research paper.docx', 'synopsis', 'synopsis', 0),
+(4, 'http://localhost/cc/documents/Learnability.docx', 'UID', 'UID', 0),
+(5, 'http://localhost/cc/documents/N408.doc', 'keyword', 'keyword', 0),
+(6, 'http://localhost/cc/documents/TRAVEL PLANNER.docx', 'travel planner', 'travel planner', 0),
+(7, 'http://localhost/cc/documents/Learnability.docx', 'learnability', 'learnability', 1),
+(8, 'http://localhost/cc/documents/TRAVEL PLANNER.docx', 'travel planner', 'travel planner', 1);
 
 --
 -- Indexes for dumped tables
@@ -264,7 +270,7 @@ ALTER TABLE `register`
 -- AUTO_INCREMENT for table `upload`
 --
 ALTER TABLE `upload`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
